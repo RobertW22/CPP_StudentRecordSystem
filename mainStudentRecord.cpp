@@ -12,6 +12,10 @@ using namespace std;
 
 
 
+
+
+
+
 ///// Creating a class in C++
 // Here were going to create our main student class
 class Student{
@@ -20,7 +24,8 @@ public:
     string name;
     int age;
     int studentID;
-    int WAM;
+    float WAM;
+    // Bool in C++ | True = 1 & False = 0
     bool currentlyEnrolled;
 
 
@@ -33,8 +38,26 @@ public:
         this->currentlyEnrolled = currentlyEnrolled;
     };
 
-   
-    
+   // Member function to change grade of a student
+   void changeGrade(Student Student, float grade){
+        Student.WAM = grade;
+   }
+
+    // Member function to change enrollment status of a student
+    void changeEnrollmentStatus(Student Student, bool status){
+        Student.currentlyEnrolled = status;
+    }
+
+    // Member function to change name of a student
+    void changeName(Student Student, string name){
+        Student.name = name;
+    }
+
+    // Member function to change age of a student
+    void changeAge(Student Student, int age){
+        Student.age = age;
+    }
+
 
 
 
@@ -188,10 +211,6 @@ int main()
 
     return 0;
 };
-
-
-
-
 
 
 
