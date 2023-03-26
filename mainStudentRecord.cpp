@@ -99,10 +99,6 @@ int main()
         // Now we can store these students into a 'vector' data structure to make it easier to access
         vector<Student> students = {student1, student2, student3, student4, student5, student6, student7, student8, student9, student10};
 
-        cout << student10.WAM << endl;
-        cout << "------------------------" << endl;
-        student10.changeGrade(student10, 99);
-        cout << student10.WAM << endl;
 
 
         // the basic output to console in C++ is cout
@@ -197,6 +193,17 @@ int main()
                 cout << "Student Enrolled: " << highest.currentlyEnrolled << endl;
                 // line break for aesthetic purposes
                 cout << "-------------------------------------------" << endl;
+
+                cout << "Press any '-' to continue" << endl;
+
+            
+                // End of function. Return to main menu
+                string temp;
+                cin >> temp;
+
+                for(int i = 0; i < 30; i++){
+                    cout << endl;
+                }
 
                 
             }
