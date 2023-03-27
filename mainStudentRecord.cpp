@@ -73,6 +73,7 @@ public:
 
 
 
+
 int main()
 {
 
@@ -115,6 +116,19 @@ int main()
         int option;
         cout << "Enter your option: " << endl;
         cin >> option;
+
+        // Input check
+        while(cin.fail() || option < 1 || option > 3){
+
+        cout << "Error! Please enter a number from the selection: ";
+        cin.clear();
+        
+        cin >> option;
+        };
+       
+       
+
+
         cout << endl;
         
 
@@ -125,11 +139,24 @@ int main()
             cout << "1. View all students" << endl;
             cout << "2. View a specific student with name search" << endl;
             cout << "3. View top scoring student " << endl;
-            cout << "4. Exit" << endl;
+            cout << "4. Back to menu" << endl;
 
             int studentViewerOption;
             cout << "Enter your option: " << endl;
             cin >> studentViewerOption;
+
+
+            // Input check
+            while(cin.fail() || studentViewerOption < 1 || studentViewerOption > 4){
+
+                cout << "Error! Please enter a number from the selection: ";
+                cin.clear();
+                
+                cin >> studentViewerOption;
+            };
+
+
+
             cout << endl;
 
 
@@ -159,6 +186,8 @@ int main()
                 cin >> name;
                 cout << endl;
 
+                bool studentFound = false;
+
                 for(int i = 0; i < students.size(); i++){
                     if(students[i].name == name){
                         cout << "Student Name: " << students[i].name << endl;
@@ -170,8 +199,16 @@ int main()
                         cout << "-------------------------------------------" << endl;
 
                         cout << endl;
+                        studentFound = true;
                     }
+
                 }
+
+                if(studentFound == false){
+                    cout << "Student not found" << endl;
+                }
+
+                cout << endl;
             }
 
             ///////////////// View top scoring student /////////////////
@@ -186,26 +223,14 @@ int main()
                     }
                 }
 
+
                 cout << "Student Name: " << highest.name << endl;
                 cout << "Student Age: " << highest.age << endl;
                 cout << "Student ID: " << highest.studentID << endl;
                 cout << "Student WAM: " << highest.WAM << endl;
                 cout << "Student Enrolled: " << highest.currentlyEnrolled << endl;
                 // line break for aesthetic purposes
-                cout << "-------------------------------------------" << endl;
-
-                cout << "Press any '-' to continue" << endl;
-
-            
-                // End of function. Return to main menu
-                string temp;
-                cin >> temp;
-
-                for(int i = 0; i < 30; i++){
-                    cout << endl;
-                }
-
-                
+                cout << "-------------------------------------------" << endl;                
             }
             
 
@@ -219,6 +244,10 @@ int main()
         else if(option == 2){
             //size of function returns byte size, so we have to divide by the size of the student class
             cout << "There are " << students.size() << " students in the database" << endl;
+
+            cout << endl;
+            cout << "\n";
+
         }
         else
 
